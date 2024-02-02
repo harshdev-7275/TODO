@@ -16,7 +16,7 @@ const TaskProvider = ({ children }) => {
     dispatch({ type: 'FETCH_TASKS_REQUEST' });
 
     try {
-      const response = await axios.get('http://localhost:5000/api/todos');
+      const response = await axios.get('http://localhost:4000/api/todos');
       dispatch({ type: 'FETCH_TASKS_SUCCESS', payload: response.data });
     } catch (error) {
       dispatch({ type: 'FETCH_TASKS_FAILURE', payload: error.message });
@@ -27,7 +27,7 @@ const TaskProvider = ({ children }) => {
     dispatch({ type: 'FETCH_TASK_REQUEST' });
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/todos/${id}`);
+      const response = await axios.get(`http://localhost:4000/api/todos/${id}`);
       dispatch({ type: 'FETCH_TASK_SUCCESS', payload: response.data });
     } catch (error) {
       dispatch({ type: 'FETCH_TASK_FAILURE', payload: error.message });
@@ -53,7 +53,7 @@ const TaskProvider = ({ children }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `http://localhost:4000/api/todos/${id}`,
         updates
       );
       dispatch({ type: 'UPDATE_TASK_SUCCESS', payload: response.data });
@@ -66,7 +66,7 @@ const TaskProvider = ({ children }) => {
     dispatch({ type: 'DELETE_TASK_REQUEST' });
 
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`);
+      await axios.delete(`http://localhost:4000/api/todos/${id}`);
       dispatch({ type: 'DELETE_TASK_SUCCESS', payload: id });
     } catch (error) {
       dispatch({ type: 'DELETE_TASK_FAILURE', payload: error.message });
