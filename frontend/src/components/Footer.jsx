@@ -32,7 +32,7 @@ const Footer = () => {
         </li>
         <li>
           <a
-            href="https://github.com/harshdev-7275?tab=repositories"
+            href="https://github.com/harshdev-7275"
             target="_blank"
             rel="noopener noreferrer"
           >
